@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, '../static')))
 const port = process.env.PORT || 3000
 
 io.on('connection', (socket) => {
-    console.log('A New Connection!')
+    console.log('New Connection!')
     socket.on('joined', (username, room) => {
         const currentUser = userJoin(socket.id, username, room)
         socket.join(currentUser.room)
