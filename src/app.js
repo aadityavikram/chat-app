@@ -18,8 +18,8 @@ io.on('connection', (socket) => {
     socket.on('joined', (username, room) => {
         const currentUser = userJoin(socket.id, username, room)
         socket.join(currentUser.room)
-        socket.emit('message', '', 'Welcome!', moment().format('h:mm a'))
-        socket.broadcast.to(currentUser.room).emit('message', '', currentUser.username + ' has joined the chat!', moment().format('h:mm a'))
+        socket.emit('message', '', 'Welcome!', moment().format('h:mm a'), undefined)
+        socket.broadcast.to(currentUser.room).emit('message', '', currentUser.username + ' has joined the chat!', moment().format('h:mm a'), undefined)
         io.to(currentUser.room).emit('roomUsers', roomUsers(currentUser.room))
     })
     socket.on('chatMessage', (msg) => {
@@ -30,7 +30,7 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => {
         const currentUser = userLeave(socket.id)
         if (currentUser) {
-            io.to(currentUser.room).emit('message', '', currentUser.username + ' has left the chat!', moment().format('h:mm a'))
+            io.to(currentUser.room).emit('message', '', currentUser.username + ' has left the chat!', moment().format('h:mm a'), undefined)
             io.to(currentUser.room).emit('roomUsers', roomUsers(currentUser.room))
         }
     })
