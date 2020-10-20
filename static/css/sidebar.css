@@ -1,0 +1,124 @@
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+body, html {
+    height: 100%;
+}
+
+#wrapper {
+    padding-left: 0;
+}
+
+#wrapper.toggled {
+    padding-left: 220px;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 220px;
+}
+
+#sidebar-wrapper {
+    background: #1a1a1a;
+    height: 100%;
+    left: 220px;
+    margin-left: -220px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 0;
+    z-index: 1000;
+}
+
+
+#page-content-wrapper {
+    padding-top: 10%;
+    width: 100%;
+}
+
+.sidebar-nav li {
+    display: inline-block;
+    line-height: 20px;
+    position: relative;
+    width: 100%;
+    color: white;
+}
+
+.sidebar-nav li:before {
+    background-color: #1c1c1c;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 3px;
+    z-index: -1;
+}
+
+.sidebar-nav li:before {
+    background-color: #6bb4e7;
+}
+
+.sidebar-nav li:hover:before {
+    width: 100%;
+}
+
+.sidebar-nav li p {
+    color:white;
+    display: block;
+    padding: 10px 15px 10px 30px;
+    background-color: transparent;
+}
+
+.sidebar-nav li.open:hover before {
+    width: 100%;
+}
+
+.sidebar-nav .dropdown-menu {
+    background-color: #222222;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    border: none;
+    -webkit-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+.sidebar-nav li p:hover, .sidebar-nav li p:active, .sidebar-nav li p:focus, .sidebar-nav li.open p:hover, .sidebar-nav li.open p:active, .sidebar-nav li.open p:focus {
+    background-color: transparent;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    font-size: 20px;
+    height: 65px;
+    line-height: 44px;
+}
+
+.menu {
+    background: transparent;
+    color: #1c1c1c;
+    border: none;
+    display: block;
+    height: 32px;
+    margin-left: 15px;
+    position: fixed;
+    top: 20px;
+    width: 32px;
+    outline: none;
+}
+
+.menu-button {
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px 45px 30px 10px;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}

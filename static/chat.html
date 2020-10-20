@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      
+      <!-- responsive -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title>ChatApp</title>
+
+      <!-- required css -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+      <link rel="stylesheet" href="css/sidebar.css">
+      <link rel="stylesheet" href="css/chat.css">
+
+  </head>
+  <body>
+      <div id="wrapper">
+
+        <!-- sidebar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+              <li class="sidebar-brand"><p>ChatApp</p></li>
+              <li><p> Room Name:</p></li>
+              <li><p id="room-name"></p></li>
+              <li><p> Users:</p></li>
+              <div id="users"></div>
+              <li><a href="index.html" style="padding-left: 15%; color: red;"> Leave Room</a></li>
+            </ul>
+        </nav>
+
+        <!-- chat content -->
+        <div id="page-content-wrapper">
+            <button type="button" class="menu is-closed" data-toggle="offcanvas">
+            <span class="menu-button">Menu</span>
+            </button>
+            <div class="chat-container">
+              <main class="chat-main">
+                <div class="chat-messages"></div>
+              </main>
+              <div class="chat-form-container">
+                <form id="chat-form">
+                  <input id="msg" type="text" placeholder="Enter Message" required autocomplete="off"/>
+                  <button class="btn">Send</button>
+                </form>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- required js -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js" integrity="sha512-BHtomM5XDcUy7tDNcrcX1Eh0RogdWiMdXl3wJcKB3PFekXb3l5aDzymaTher61u6vEZySnoC/SAj2Y/p918Y3w==" crossorigin="anonymous"></script>
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="js/app.js"></script>
+      <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+      <script src="js/sidebar.js"></script>
+  </body>
+</html>
