@@ -25,7 +25,7 @@ io.on('connection', (socket) => {
     })
     socket.on('chatMessage', (msg) => {
         const currentUser = getCurrentUser(socket.id)
-        socket.emit('message', currentUser.username, msg, '', 'right')
+        socket.emit('message', currentUser.username, msg, 'A', 'right')
         socket.broadcast.to(currentUser.room).emit('message', currentUser.username, msg, '', 'left')
     })
     socket.on('disconnect', () => {
